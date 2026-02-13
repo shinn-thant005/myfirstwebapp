@@ -28,4 +28,18 @@ public class sayHelloController {
 
         return "Hello World";
     }
+
+    // /src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp
+    // /src/main/resources/META-INF/resources/WEB-INF/jsp/welcome.jsp
+    // /src/main/resources/META-INF/resources/WEB-INF/jsp/todo.jsp
+    // /src/main/resources/META-INF/resources/WEB-INF/jsp/login.jsp
+
+    @RequestMapping("/say-hello-jsp")
+    public String sayHelloJSP() {
+      return "sayHello";
+    }
+
+
+
+
 }
