@@ -131,19 +131,19 @@
 
     <div class="login-card">
         <div class="header">
-            <h1>Welcome Back ${name}</h1>
+            <h1>Welcome Back</h1>
             <p>Please enter your details to sign in.</p>
         </div>
 
         <form>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="you@example.com" required>
+                <input type="email" id="email">
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
+                <input type="password" id="password">
             </div>
 
             <div class="options">
@@ -163,3 +163,4 @@
 
 </body>
 </html>
+
