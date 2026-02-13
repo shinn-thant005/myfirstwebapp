@@ -8,10 +8,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
     @RequestMapping("/login")
-    public String goTologinPage(@RequestParam String name, ModelMap model) {
-        model.addAttribute("name", name);
-        System.out.println("Request Parameter: " + name); // Not Recommand for production code
+    public String goTologinPage(@RequestParam int id, ModelMap model) {
+        if (id == 21) {
+            model.addAttribute("name", "Shinn");
+        }
+        else {
+            model.addAttribute("name", "Guest");
+        }
+
+        System.out.println("Request Parameter: " + "Shinn"); // Not Recommend for production code
         return "login";
     }
+
+
+
 
 }
