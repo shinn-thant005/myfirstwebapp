@@ -15,7 +15,7 @@ public class sayHelloController {
 
     @RequestMapping("/say-hello-html")
     @ResponseBody
-    public String sayHelloHTML(){
+    public StringBuffer sayHelloHTML(){
         StringBuffer sb = new StringBuffer();
         sb.append("<html>");
         sb.append("<head>");
@@ -26,7 +26,7 @@ public class sayHelloController {
         sb.append("</body>");
         sb.append("<html>");
 
-        return "Hello World";
+        return sb;
     }
 
     // /src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp

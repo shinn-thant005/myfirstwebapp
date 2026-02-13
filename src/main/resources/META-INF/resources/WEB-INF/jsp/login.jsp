@@ -131,7 +131,7 @@
 
     <div class="login-card">
         <div class="header">
-            <h1>Welcome Back</h1>
+            <h1>Welcome Back ${name}</h1>
             <p>Please enter your details to sign in.</p>
         </div>
 
