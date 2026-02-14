@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
     AuthenticationService authentication;
 
+    public LoginController(AuthenticationService authentication) {
+        this.authentication = authentication;
+    }
+
     @RequestMapping("/login")
     public String goTologinPage() {
         return "login";
