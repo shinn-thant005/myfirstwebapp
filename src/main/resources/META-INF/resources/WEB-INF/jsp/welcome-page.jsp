@@ -109,7 +109,7 @@
 
         <p>It's a beautiful day to start working on your university projects. Your dashboard is ready.</p>
 
-        <a href="#" class="btn-primary">Go to Dashboard</a>
+        <a href="list-todo" class="btn-primary">Go to Todo</a>
     </div>
 
 </body>
