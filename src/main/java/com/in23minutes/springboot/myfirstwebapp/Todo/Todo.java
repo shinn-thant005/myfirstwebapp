@@ -44,6 +44,10 @@ public class Todo {
         this.id = id;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
