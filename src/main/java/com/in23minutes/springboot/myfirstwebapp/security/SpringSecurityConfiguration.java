@@ -1,5 +1,6 @@
 package com.in23minutes.springboot.myfirstwebapp.security;
 
+import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
@@ -15,15 +16,22 @@ public class SpringSecurityConfiguration {
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
 
+        UserDetails UserDetails1 = createNewUser("shinnthant", "dummy");
+        UserDetails UserDetails2 = createNewUser("shinnthant2", "dummy");
+        return new InMemoryUserDetailsManager(UserDetails1, UserDetails2);
+    }
+
+    private @NonNull UserDetails createNewUser(String username, String password) {
         Function<String, String> passwordEncoder
                 = input -> passwordEncoder().encode(input);
+
         UserDetails UserDetails = User.builder()
                                     .passwordEncoder(passwordEncoder)
-                                    .username("shinnthant")
-                                    .password("dummy")
+                                    .username(username)
+                                    .password(password)
                                     .roles("USER", "ADMIN")
                                     .build();
-        return new InMemoryUserDetailsManager(UserDetails);
+        return UserDetails;
     }
 
     @Bean
