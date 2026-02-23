@@ -18,14 +18,11 @@ import java.util.List;
 @Controller
 @SessionAttributes("name")
 public class todoControllerJpa {
-    private todoService todoService;
     private TodoRepository todoRepository;
 
-    public todoControllerJpa(todoService todoService, TodoRepository todoRepository) {
-        this.todoService = todoService;
+    public todoControllerJpa(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
-
 
     @RequestMapping("list-todo")
     public String ListAllTodos(ModelMap model) {
@@ -57,13 +54,13 @@ public class todoControllerJpa {
 
     @RequestMapping("delete-todo")
     public String DeleteTodos(@RequestParam int id) {
-        todoService.deleteTodoByID(id);
+        todoRepository.deleteById(id);
         return "redirect:list-todo";
     }
 
     @RequestMapping(value="update-todo", method = RequestMethod.GET)
     public String ShowUpdateTodoPage(@RequestParam int id, ModelMap model) {
-        Todo todo = todoService.findTodoByID(id);
+        Todo todo = todoRepository.findById(id).get();
         model.addAttribute("todo", todo);
         return "todo";
     }
@@ -75,7 +72,7 @@ public class todoControllerJpa {
         }
         String username = getLoggedinUsername(model);
         todo.setUsername(username);
-        todoService.updateTodo(todo);
+        todoRepository.save(todo);
         return "redirect:list-todo";
     }
 
